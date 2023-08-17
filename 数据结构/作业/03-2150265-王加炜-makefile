@@ -1,0 +1,16 @@
+CFLAGS   = -c -Wall -Werror
+COMPILE  = g++
+RM       = rm -f
+OBJ      = 03-2150265-王加炜
+SOURCE   = 03-2150265-王加炜.o
+DEPEND   = 03-2150265-王加炜.cpp 
+
+build : $(SOURCE)
+	$(COMPILE) $(SOURCE) -o $(OBJ)
+
+%.o:%cpp $(DEPEND)
+	$(COMPILE) $(CFLAGS) -o $@ $<
+
+clean:
+	$(RM) *.bak $(SOURCE) $(OBJ)
+	touch *.*
